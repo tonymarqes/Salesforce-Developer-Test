@@ -10,6 +10,9 @@ public with sharing class HolidayMock implements HttpCalloutMock{
         HTTPResponse res = new HTTPResponse();
 
         switch on httpCode{
+            when 000{
+                return getDifferentStructure();
+            }
             when 404{
                 return getNotSupportedErrorCall();
             }
@@ -65,6 +68,21 @@ public with sharing class HolidayMock implements HttpCalloutMock{
             '"type": "feriados_error",'+
             '"name":  "InternalError"'+
             '}'
+        );
+        return res;
+    }
+
+    public HTTPResponse getDifferentStructure(){
+        HTTPResponse res = new HTTPResponse();
+        res.setStatus('OK');
+        res.setStatusCode(200);
+        res.setHeader('Content-type', 'application/json');
+        res.setBody(
+                '{' +
+                    '"date": "2022-01-01",' + 
+                    '"name": "Confraternização mundial",'+
+                    '"type": "national"'+
+                '}'
         );
         return res;
     }
