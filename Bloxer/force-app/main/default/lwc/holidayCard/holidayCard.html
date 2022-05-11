@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <template if:true={hasNextHoliday}>
+            <template if:true={isToday}>
+                <p class="slds-p-horizontal_small">Enjoy your {Name} holiday!</p>
+            </template>
+            <template if:false={isToday}>
+                <p class="slds-p-horizontal_small">The Next Holiday is {Name} and it will be on {Date} and we have {DaysDiff} day's until it</p>
+            </template>
+        </template>
+        <template if:false={hasNextHoliday}>
+            <p class="slds-p-horizontal_small">Next Holiday could not be founded</p>
+        </template>
+
+    </lightning-card>   
+</template>
