@@ -22,8 +22,6 @@ public with sharing class TaskHelper {
             for(National_Holidays__c nationalHoliday : nationalHolidays){
                     if(taskItem.ActivityDate == nationalHoliday.Date__c){
                         taskItem.Is_Holiday__c = true;
-                    }else{
-                        taskItem.Is_Holiday__c = false;
                     }
             }
         }
