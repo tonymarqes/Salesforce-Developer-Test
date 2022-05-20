@@ -16,6 +16,8 @@ public with sharing class HolidayCardController {
             response.put('hasNextHoliday', false);
         }
 
+        System.debug('Teste efetuado');
+
         return response;
     }
 }
