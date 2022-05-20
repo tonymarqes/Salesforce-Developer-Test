@@ -12,6 +12,7 @@ public with sharing class HolidayCardControllerTest {
 
         Map<String, Object> result = HolidayCardController.getNextHoliday();
         System.assertEquals(true, (Boolean) result.get('hasNextHoliday'));
+        System.debug('Teste 2');
 
         Test.stopTest();
     }
