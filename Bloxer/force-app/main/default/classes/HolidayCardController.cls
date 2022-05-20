@@ -15,8 +15,9 @@ public with sharing class HolidayCardController {
         }else{
             response.put('hasNextHoliday', false);
         }
-
-        System.debug('Teste efetuado');
+        
+        
+        System.debug('Outro comentario APEX');
 
         return response;
     }
